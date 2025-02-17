@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Money Transaction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .transaction {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+        }
+        .transaction p {
+            font-size: 16px;
+            color: #555;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #333;
+        }
+        .details {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .details p {
+            font-size: 14px;
+            color: #777;
+        }
+        .details .value {
+            color: #333;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mobile Money Transaction Details</h1>
+        <div class="transaction">
+            <h2>Transaction Summary</h2>
+            <p><span class="highlight">Status:</span> {{ data[0][0] }}</p>
+            <p><span class="highlight">Transaction address:</span> {{ data[0][1] }}</p>
+            <p><span class="highlight">Transaction Date & Time sent:</span> {{ data[0][2] }}</p>
+            <p><span class="highlight">message:</span> {{ data[0][3] }}</p>
+            <p><span class="highlight">service_center:</span> {{data[0][4]}}</p>
+            <p><span class="highlight">Transaction Amount:</span> {{ data[0][5] }} RWF</p>
+            <p><span class="highlight">message_type:</span> {{ data[0][6] }} RWF</p>
+            <p><span class="highlight">category:</span> {{ data[0][7] }}</p>
+            <p><span class="highlight">date:</span> {{ data[0][8] }}</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Mobile Money Service</p>
+        </div>
+    </div>
+</body>
+</html>
