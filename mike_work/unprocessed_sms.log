@@ -1,0 +1,148 @@
+2025-02-17 19:36:57,628 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/connection_cext.py", line 365, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Access denied for user 'remote'@'localhost' (using password: YES)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/db_formation.py", line 49, in connect_to_database
+    self.conn = mysql.connector.connect(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/connection_cext.py", line 153, in __init__
+    self.connect(**kwargs)
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/abstracts.py", line 1529, in connect
+    self._open_connection()
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/connection_cext.py", line 370, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1045 (28000): Access denied for user 'remote'@'localhost' (using password: YES)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/flaskapp.py", line 21, in home
+    get_obj = get_data()
+              ^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/crud.py", line 11, in __init__
+    self.connect_to_database()  # Add this line to initialize connection
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/db_formation.py", line 58, in connect_to_database
+    except mysql.connector.error as e:
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'mysql.connector' has no attribute 'error'. Did you mean: 'Error'?
+2025-02-17 19:36:57,636 - INFO - 127.0.0.1 - - [17/Feb/2025 19:36:57] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-17 19:36:58,702 - INFO - 127.0.0.1 - - [17/Feb/2025 19:36:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-17 19:37:04,312 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/connection_cext.py", line 365, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Access denied for user 'remote'@'localhost' (using password: YES)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/db_formation.py", line 49, in connect_to_database
+    self.conn = mysql.connector.connect(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/connection_cext.py", line 153, in __init__
+    self.connect(**kwargs)
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/abstracts.py", line 1529, in connect
+    self._open_connection()
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/connection_cext.py", line 370, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1045 (28000): Access denied for user 'remote'@'localhost' (using password: YES)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/flaskapp.py", line 21, in home
+    get_obj = get_data()
+              ^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/crud.py", line 11, in __init__
+    self.connect_to_database()  # Add this line to initialize connection
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/db_formation.py", line 58, in connect_to_database
+    except mysql.connector.error as e:
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'mysql.connector' has no attribute 'error'. Did you mean: 'Error'?
+2025-02-17 19:37:04,316 - INFO - 127.0.0.1 - - [17/Feb/2025 19:37:04] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-17 19:37:05,830 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/connection_cext.py", line 365, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Access denied for user 'remote'@'localhost' (using password: YES)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/db_formation.py", line 49, in connect_to_database
+    self.conn = mysql.connector.connect(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/connection_cext.py", line 153, in __init__
+    self.connect(**kwargs)
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/abstracts.py", line 1529, in connect
+    self._open_connection()
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/mysql/connector/connection_cext.py", line 370, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1045 (28000): Access denied for user 'remote'@'localhost' (using password: YES)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/.venv/lib64/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/flaskapp.py", line 21, in home
+    get_obj = get_data()
+              ^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/crud.py", line 11, in __init__
+    self.connect_to_database()  # Add this line to initialize connection
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/blairkayigamba/Desktop/code/momo-dashboard/mike_work/db_formation.py", line 58, in connect_to_database
+    except mysql.connector.error as e:
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'mysql.connector' has no attribute 'error'. Did you mean: 'Error'?
+2025-02-17 19:37:05,832 - INFO - 127.0.0.1 - - [17/Feb/2025 19:37:05] "[35m[1mGET / HTTP/1.1[0m" 500 -
