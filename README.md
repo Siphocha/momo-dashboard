@@ -8,7 +8,7 @@ This project is designed to process and analyze SMS data from MoMo (Mobile Money
 - **Ntwari Mike Chris Kevin**
 - **Dushime Paulette**
 - **Sipho Chakala**
-- **Kayumba Blair**
+- **Kayigamba Blair**
 
 ## Features
 - **Backend**:
@@ -39,7 +39,8 @@ This project is designed to process and analyze SMS data from MoMo (Mobile Money
 ## Installation
 
 ### Prerequisites:
-- Python 3.8+
+- Python 3.12+
+- PostgreSQL
 - MySQL Server
 - FastApi
 

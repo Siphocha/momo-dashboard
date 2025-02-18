@@ -248,7 +248,7 @@ def get_all_sms(
     fetching_query = []
 
     if type:
-        fetching_query.append(SmsData.message_type == type)
+        fetching_query.append(SmsData.category == type)
     # Add date filter
     # Where date is equal to that date
     if date:
