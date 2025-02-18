@@ -21,3 +21,26 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
+.section-3 {
+  display: flex;
+  justify-content: space-around;
+}
+.total-transactions-div {
+  background-color: blue;
+  margin-top: 10px;
+  padding: 20px;
+}
+.total-transactions {
+  background-color: white;
+  padding: 10px;
+}
+.section-4 {
+  background-color: blue;
+  padding: 10px;
+  margin-top: 10px;
+}
+.total-coming {
+  background-color: white;
+  padding: 10px;
+  margin-top: 5px;
+}
