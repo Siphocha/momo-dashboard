@@ -46,7 +46,7 @@ This project is designed to process and analyze SMS data from MoMo (Mobile Money
 ### Steps:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/momo-sms-project.git
+   git clone https://github.com/Siphocha/momo-dashboard
    cd momo-sms-project
    ```
 2. Set up the backend:
@@ -87,6 +87,7 @@ This project is designed to process and analyze SMS data from MoMo (Mobile Money
 ## Filtering
 The frontend allows users to filter data by various criteria such as:
 - Date Range
+- Filter by any word
 - Transaction Type
 - Amount
 
@@ -112,9 +113,6 @@ We welcome contributions! Please follow these steps:
    git push origin feature-name
    ```
 5. Create a pull request.
-
-## License
-This project is licensed under the MIT License.
 
 ---
 
