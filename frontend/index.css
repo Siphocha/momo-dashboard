@@ -76,10 +76,12 @@
 .bar-section {
   background-color: white;
   padding: 20px;
+  font-weight: 600;
 }
 .pie-section {
   background-color: white;
   padding: 20px;
+  font-weight: 600;
 }
 .table-id {
   background-color: blue;
@@ -91,4 +93,5 @@
 .table-id-div {
   background-color: white;
   padding: 30px;
+  font-weight: 600;
 }
