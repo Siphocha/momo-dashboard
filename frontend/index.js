@@ -25,6 +25,7 @@ function renderBarChart(data) {
   data.forEach((element) => {
     // get the date from the data
     const date = new Date(element.date);
+
     // format the date to month and year
     const month = date.toLocaleString("en-us", { month: "short" });
     const year = date.toLocaleString("en-us", { year: "numeric" });
@@ -138,6 +139,10 @@ function fetchData() {
         const newCell3 = document.createElement("td");
         const newCell4 = document.createElement("td");
         const newCell5 = document.createElement("td");
+        const messageDisplay = document.createElement("p");
+
+        // Add class to the cell message display
+        messageDisplay.classList.add("message-display");
 
         // Add data to the cell
         newCell1.innerHTML = index + 1;
@@ -153,12 +158,16 @@ function fetchData() {
         newCell4.innerHTML = element.message_type;
         newCell3.innerHTML = element.category;
 
+        // messageDisplay.innerHTML = element.message;
+        messageDisplay.innerText = element.message;
+
         // Append cell to the row
         newRow.appendChild(newCell1);
         newRow.appendChild(newCell2);
         newRow.appendChild(newCell3);
         newRow.appendChild(newCell4);
         newRow.appendChild(newCell5);
+        newRow.appendChild(messageDisplay);
 
         // Append row to the table
         tableBody.appendChild(newRow);
