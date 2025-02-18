@@ -52,3 +52,29 @@
   padding-top: 7px;
   font-weight: 800;
 }
+.graphs {
+  display: flex;
+  justify-content: space-around;
+}
+.bar-graph {
+  background-color: blue;
+  padding: 60px;
+  width: 35%;
+  margin-top: 7px;
+  text-align: center;
+  font-size: 15px;
+}
+.pie-chart {
+  background-color: blue;
+  padding: 60px;
+  width: 35%;
+  margin-top: 7px;
+  text-align: center;
+  font-size: 15px;
+}
+.bar-section {
+  background-color: white;
+}
+.pie-section {
+  background-color: white;
+}
