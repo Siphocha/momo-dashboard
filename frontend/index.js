@@ -36,7 +36,7 @@ function renderBarChart(data) {
     if (totalAmountByMonth.has(time)) {
       totalAmountByMonth.set(
         time,
-        totalAmountByMonth.get(time) + element.amount,
+        totalAmountByMonth.get(time) + element.amount
       );
     } else {
       totalAmountByMonth.set(time, element.amount);
@@ -97,7 +97,7 @@ function renderPieChart(data) {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false,
+      // maintainAspectRatio: false,
     },
   });
 }
@@ -111,7 +111,7 @@ function fetchData() {
   const urlParams = new URLSearchParams(requestParams).toString();
 
   // Fetch the data from the API
-  fetch(`http://127.0.0.1:6001/sms?${urlParams}`)
+  fetch(`https://momo-dashboard.onrender.com/sms?${urlParams}`)
     .then((response) => response.json())
     .then((data) => {
       // Render the pie chart according to the data

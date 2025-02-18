@@ -1,86 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momo data analysis Dashboard</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Momo data analysis Dashboard</title>
-  <link rel="stylesheet" href="index.css" />
-</head>
-
-<body>
-  <div>
-    <div class="title">
-      <h1 class="title-div">Momo data analysis Dashboard
-    </div>
-  </div>
-
-  <!-- Filter section -->
-  <div class="section-2">
-    <div class="type">
-      <!-- type section -->
-      <select name="type" id="type-section">
-        <option value=""> Select Type</option>
-        <option value="Coming">Coming</option>
-        <option value="Going">Going</option>
-      </select>
-
-    </div>
-    <div class="type">
-
-      <!-- filter by date -->
-      <input type="date" name="date" id="date" min="2024-08-07" max="2025-01-16" />
-    </div>
-    <div class=" type">
-
-      <!-- filter by amount -->
-      <input type="number" name="amount" id="amount" placeholder="Filter by amount" />
-    </div>
-    <div class="type">
-
-      <!-- filter by search -->
-      <input type="text" name="search" id="search" placeholder="Filter by search" />
-    </div>
-  </div>
-
-  <div class="section-3">
-
-    <div class="total-transactions-div">
-      <div class="total-transactions">
-        <p>Total Transanctions</p>
-        <div id="total-transactions">0</div>
+  <body>
+    <!-- header -->
+    <div>
+      <div class="title">
+        <h1 class="title-div">Momo data analysis Dashboard</h1>
       </div>
     </div>
 
-    <div class="section-4">
-      <div class="total-coming">Total Coming
-        <div class="" id="total-coming">0</div>
+    <!-- Filter section -->
+    <div class="section-2">
+      <div class="type">
+        <!-- type section -->
+        <select name="type" id="type-section">
+          <option value="">Select Type</option>
+          <option value="Coming">Coming</option>
+          <option value="Going">Going</option>
+        </select>
+      </div>
+      <div class="type">
+        <!-- filter by date -->
+        <input
+          class="filter"
+          type="date"
+          name="date"
+          id="date"
+          min="2024-08-07"
+          max="2025-01-16"
+        />
+      </div>
+      <div class="type">
+        <!-- filter by amount -->
+        <input
+          type="number"
+          name="amount"
+          id="amount"
+          placeholder="Filter by amount"
+        />
+      </div>
+      <div class="type">
+        <!-- filter by search -->
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Filter by search"
+        />
       </div>
     </div>
-  </div>
 
-  </div>
-
-  <!-- charts section -->
-  <div class="graphs">
-    <div class="bar-graph">
-      <div class="bar-section">
-        Transaction volume by type graph
-        <div class="pie-chart-graph">
-          <canvas id="pie-chart"></canvas>
+    <div class="section-3">
+      <div class="total-transactions-div">
+        <div class="total-transactions">
+          <p>Total Transanctions</p>
+          <div id="total-transactions">0</div>
         </div>
       </div>
 
-      <div class="bar-graph">
-        <div class="bar-section">
-          Monthly transactions chart
-          <div class="bar-chart-graph">
-            <canvas id="bar-chart"></canvas>
-          </div>
+      <div class="section-4">
+        <div class="total-coming">
+          Total Coming
+          <div class="" id="total-coming">0</div>
         </div>
       </div>
     </div>
-
     <!--table for id-->
     <div class="table-id">
       <div class="table-id-div">
@@ -95,11 +85,30 @@
             </tr>
           </thead>
           <tbody id="table-body">
-            <tr class="table-item" id="table-item">
-            </tr>
+            <tr class="table-item" id="table-item"></tr>
           </tbody>
-
         </table>
+      </div>
+    </div>
+
+    <!-- charts section -->
+    <div class="graphs">
+      <div class="bar-graph">
+        <div class="bar-section">
+          Transaction volume by type graph
+          <div class="pie-chart-graph">
+            <canvas id="pie-chart"></canvas>
+          </div>
+        </div>
+
+        <div class="bar-graph">
+          <div class="bar-section">
+            Monthly transactions chart
+            <div class="bar-chart-graph">
+              <canvas id="bar-chart"></canvas>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -107,6 +116,5 @@
     <script src="index.js"></script>
     <!-- linking the chartjs cdn -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</body>
-
+  </body>
 </html>
