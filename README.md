@@ -78,11 +78,12 @@ This project is designed to process and analyze SMS data from MoMo (Mobile Money
    - Visualize data using charts.
 
 ## API Endpoints
-| Method | Endpoint          | Description               |
-|--------|-------------------|---------------------------|
-| `POST` | `/upload`         | Upload XML data           |
-| `GET`  | `/transactions`   | Retrieve all transactions |
-| `GET`  | `/filter`         | Retrieve filtered data    |
+| Method | Endpoint            | Description               |
+|--------|-------------------  |---------------------------|
+| `GET`  | `/sms?search=`      | search any word           |
+| `GET`  | `/sms?type=`        | Retrieve filtered data    |
+| `GET`  | `/sms?date=`        | Retrieve filtered data    |
+| `GET`  | `/sms?amount=`      | Retrieve filtered data    |
 
 ## Filtering
 The frontend allows users to filter data by various criteria such as:
