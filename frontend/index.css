@@ -137,6 +137,7 @@
   border: 2px solid black;
   border-radius: 50px;
   text-align: center;
+  position: relative;
 }
 
 .table-id {
@@ -148,6 +149,7 @@
   background-color: white;
   padding: 20px;
   font-weight: 600;
+  position: relative;
 }
 
 .pie-chart-graph {
@@ -159,4 +161,25 @@
   background-color: white;
   min-width: 600px;
   height: 400px;
+}
+
+.message-display {
+  display: none;
+  top: 100;
+  left: 0;
+  width: 50%;
+  z-index: 100;
+}
+
+.table-item:hover .message-display {
+  display: inline;
+  position: absolute;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 10px;
+  word-wrap: break-word;
 }
