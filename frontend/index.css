@@ -8,6 +8,7 @@
   border-radius: 10px;
   font-weight: 800;
 }
+
 .section-2 {
   display: flex;
   justify-content: space-between;
@@ -74,7 +75,20 @@
 }
 .bar-section {
   background-color: white;
+  padding: 20px;
 }
 .pie-section {
   background-color: white;
+  padding: 20px;
+}
+.table-id {
+  background-color: blue;
+  margin-top: 7px;
+  text-align: center;
+  padding: 60px;
+  font-size: 20px;
+}
+.table-id-div {
+  background-color: white;
+  padding: 30px;
 }
