@@ -2,9 +2,11 @@
   background-color: blue;
   text-align: center;
   color: white;
-  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-size: 20px;
   border-radius: 10px;
+  font-weight: 800;
 }
 .section-2 {
   display: flex;
@@ -20,6 +22,7 @@
   padding-right: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
+  font-weight: 700;
 }
 .section-3 {
   display: flex;
@@ -33,12 +36,12 @@
 .total-transactions {
   background-color: white;
   padding: 10px;
+  font-weight: 800;
 }
 .section-4 {
   display: flex;
   background-color: blue;
   padding: 20px;
-
   margin-top: 10px;
 }
 .total-coming {
@@ -47,4 +50,5 @@
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 7px;
+  font-weight: 800;
 }
