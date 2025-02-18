@@ -1,5 +1,7 @@
 import logging
 from contextlib import asynccontextmanager
+from dataclasses import dataclass
+from datetime import datetime
 from functools import lru_cache
 from typing import Annotated, Optional
 
@@ -72,9 +74,8 @@ async def get_sms(
     db: database,
     search: Optional[str] = None,
     type: Optional[str] = None,
-    date: Optional[str] = None,
+    date: Optional[datetime] = None,
     amount: Optional[str] = None,
 ):
-
     get_all = get_all_sms(db, search, type, date, amount)
     return get_all
