@@ -8,7 +8,7 @@ const amountInput = document.getElementById("amount");
 const datePicker = document.getElementById("date");
 const typeSelect = document.getElementById("type-section");
 const totalComing = document.getElementById("total-coming");
-
+const loadingPage = document.getElementById("hover-loading");
 // Intialize the requestParams object to store the query parameters for the
 // filtering
 const requestParams = {};
@@ -106,7 +106,7 @@ function renderPieChart(data) {
 function fetchData() {
   // clear the table before fetching new data
   tableBody.innerHTML = "";
-
+  loadingPage.style.display = "flex";
   // Convert the requestParams object to URLSearchParams
   // and append it to the URL for the filtering
   const urlParams = new URLSearchParams(requestParams).toString();
@@ -115,6 +115,8 @@ function fetchData() {
   fetch(`https://momo-dashboard.onrender.com/sms?${urlParams}`)
     .then((response) => response.json())
     .then((data) => {
+      // close the loading page
+      loadingPage.style.display = "none";
       // Render the pie chart according to the data
       renderPieChart(data);
 
