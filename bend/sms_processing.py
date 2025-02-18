@@ -5,7 +5,7 @@ from datetime import datetime
 from functools import reduce
 from uuid import UUID, uuid4
 
-from sqlmodel import Field, Session, SQLModel, col, select, text
+from sqlmodel import Date, Field, Session, SQLModel, cast, col, select, text
 
 log_file = "unprocessed_sms.log"
 
@@ -21,13 +21,13 @@ class SmsData(SQLModel, table=True):
         default_factory=uuid4, primary_key=True, unique=True, nullable=False
     )
     address: str = Field(nullable=True)
-    date_sent: str = Field(nullable=True)
+    date_sent: datetime = Field(nullable=True)
     message: str = Field(nullable=True)
     service_center: str = Field(nullable=True)
     amount: float = Field(nullable=True)
     message_type: str = Field(nullable=True)
     category: str = Field(nullable=True)
-    date: str = Field(nullable=True)
+    date: datetime = Field(nullable=True)
 
     @staticmethod
     def search():
@@ -172,10 +172,14 @@ class SMSProcessor:
                     service_center = sms.attrib.get("service_center", "")
                     date = datetime.fromtimestamp(
                         int(sms.attrib["date"]) / 1000
-                    ).strftime("%Y-%m-%d %H:%M:%S")
+                    ).strftime("%Y-%m-%d%H:%M:%S")
                     date_sent = datetime.fromtimestamp(
                         int(sms.attrib["date_sent"]) / 1000
-                    ).strftime("%Y-%m-%d %H:%M:%S")
+                    ).strftime("%Y-%m-%d%H:%M:%S")
+
+                    date = datetime.strptime(date, "%Y-%m-%d%H:%M:%S")
+                    date_sent = datetime.strptime(date_sent, "%Y-%m-%d%H:%M:%S")
+
                     # Parse message to extract additional fields
                     amount, message_type_, category = self.parse_message(message)
                     if message_type_ == "Unknown":
@@ -195,12 +199,12 @@ class SMSProcessor:
                     add_sms = SmsData(
                         address=address,
                         date_sent=date_sent,
+                        date=date,
                         message=message,
                         service_center=service_center,
                         amount=amount,
                         message_type=message_type_,
                         category=category,
-                        date=date,
                     )
 
                     self.db.add(add_sms)
@@ -245,8 +249,10 @@ def get_all_sms(
 
     if type:
         fetching_query.append(SmsData.message_type == type)
+    # Add date filter
+    # Where date is equal to that date
     if date:
-        fetching_query.append(SmsData.date >= date)
+        fetching_query.append(cast(SmsData.date, Date) == date)
     if amount:
         fetching_query.append(SmsData.amount == amount)
 
