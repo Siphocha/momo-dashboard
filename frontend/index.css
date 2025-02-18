@@ -9,6 +9,10 @@
   font-weight: 800;
 }
 
+.title-div {
+  text-transform: capitalize;
+}
+
 .section-2 {
   display: flex;
   justify-content: space-between;
@@ -59,7 +63,7 @@
 }
 .bar-graph {
   background-color: blue;
-  padding: 60px;
+  padding: 1px;
   width: 35%;
   margin-top: 7px;
   text-align: center;
@@ -73,9 +77,10 @@
   text-align: center;
   font-size: 15px;
 }
+
 .bar-section {
   background-color: white;
-  padding: 20px;
+  padding: 5px;
   font-weight: 600;
 }
 .pie-section {
@@ -94,4 +99,33 @@
   background-color: white;
   padding: 30px;
   font-weight: 600;
+  border-collapse: collapse;
+}
+
+.table-item {
+  border: 2px solid black;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.table-id {
+  height: 350px;
+  overflow: auto;
+}
+
+.table-body {
+  background-color: white;
+  padding: 20px;
+  font-weight: 600;
+}
+
+.pie-chart-graph {
+  width: 100%;
+  height: 100%;
+}
+
+.bar-chart-graph {
+  background-color: white;
+  min-width: 600px;
+  height: 400px;
 }
