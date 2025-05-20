@@ -9,6 +9,7 @@ This project is designed to process and analyze SMS data from MoMo (Mobile Money
 - **Dushime Paulette**
 - **Sipho Chakala**
 - **Kayigamba Blair**
+- **Olivier Collins ITANGISHAKA**
 
 ## Features
 - **Backend**:
